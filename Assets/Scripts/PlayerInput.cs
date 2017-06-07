@@ -22,30 +22,32 @@ public class PlayerInput : MonoBehaviour {
 	void Update () {
 
         Ray ray = cam.ScreenPointToRay(new Vector3(scope.transform.position.x, scope.transform.position.y, 0));
-        //Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
         Debug.DrawRay(ray.origin, ray.direction * 250, Color.yellow);
 
-        target.position = ray.GetPoint(250);
+        float xPos = Mathf.Lerp(target.position.x, ray.GetPoint(250).x, speed * Time.deltaTime);
+        float yPos = Mathf.Lerp(target.position.y, ray.GetPoint(250).y, Time.deltaTime);
+
+        Vector3 calculatedTarget = new Vector3(xPos, yPos, ray.GetPoint(250).z);
+
+
+        target.position = calculatedTarget;
 		
         if(Input.GetKey(KeyCode.UpArrow))
         {
             scope.transform.Translate(Vector3.up);
-            target.transform.Translate(Vector3.up * speed * Time.deltaTime);
             aud1.UnPause();
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             scope.transform.Translate(Vector3.down);
-            target.transform.Translate(Vector3.down * speed * Time.deltaTime);
             aud1.UnPause();
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             scope.transform.Translate(Vector3.right);
-            target.transform.Translate(Vector3.right * speed * Time.deltaTime);
             aud1.UnPause();
         }
 
@@ -53,7 +55,6 @@ public class PlayerInput : MonoBehaviour {
 
         {
             scope.transform.Translate(Vector3.left);
-            target.transform.Translate(Vector3.left * speed * Time.deltaTime);
             aud1.UnPause();
         }
 
