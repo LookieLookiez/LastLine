@@ -10,15 +10,23 @@ public class PlayerInput : MonoBehaviour {
 
     public AudioSource aud1;
     public AudioClip move;
+    public Camera cam;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         aud1 = GetComponent<AudioSource>();
         aud1.Pause();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        Ray ray = cam.ScreenPointToRay(new Vector3(scope.transform.position.x, scope.transform.position.y, 0));
+        //Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+
+        Debug.DrawRay(ray.origin, ray.direction * 250, Color.yellow);
+
+        target.position = ray.GetPoint(250);
 		
         if(Input.GetKey(KeyCode.UpArrow))
         {
