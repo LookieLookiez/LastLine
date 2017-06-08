@@ -7,15 +7,28 @@ public class PlayerInput : MonoBehaviour {
     public Image scope;
     public Transform target;
     public float speed;
-
+    public Image shellIMG;
+    public float maxShellFill;
+    public float curShellFill;
     public AudioSource aud1;
     public AudioClip move;
     public Camera cam;
+
+    public float reloadTime;
+    public float timeToReload;
+
+    public Transform shellTarget;
+    public GameObject shell;
+    public GameObject fireAudio;
+    public ParticleSystem rocket;
+    public GameObject barrel;
+
 
     // Use this for initialization
     void Start () {
         aud1 = GetComponent<AudioSource>();
         aud1.Pause();
+        curShellFill = maxShellFill;
 	}
 	
 	// Update is called once per frame
@@ -62,6 +75,22 @@ public class PlayerInput : MonoBehaviour {
         {
             aud1.Pause();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Space) && reloadTime >= timeToReload)
+        {
+            fireAudio.GetComponent<AudioSource>().Play();
+            rocket.Play();
+            reloadTime = 0;
+        }
+
+        if(reloadTime < timeToReload)
+        {
+            reloadTime += Time.deltaTime;
+        }
+
+        float updatedFill = reloadTime / timeToReload;
+        shellIMG.fillAmount = updatedFill;
+
+        barrel.transform.LookAt(target);
     }
 }
