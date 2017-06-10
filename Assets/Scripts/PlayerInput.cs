@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour {
+
+    public bool gameEnding;
+    public GameObject uIManager;
+
     public Image scope;
     public Transform target;
     public float speed;
     public Image shellIMG;
     public float maxShellFill;
     public float curShellFill;
-    public AudioSource aud1;
-    public AudioClip move;
     public Camera cam;
 
     public float reloadTime;
@@ -26,8 +28,7 @@ public class PlayerInput : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        aud1 = GetComponent<AudioSource>();
-        aud1.Pause();
+        gameEnding = false;
         curShellFill = maxShellFill;
 	}
 	
@@ -49,31 +50,22 @@ public class PlayerInput : MonoBehaviour {
         if(Input.GetKey(KeyCode.UpArrow))
         {
             scope.transform.Translate(Vector3.up);
-            aud1.UnPause();
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             scope.transform.Translate(Vector3.down);
-            aud1.UnPause();
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             scope.transform.Translate(Vector3.right);
-            aud1.UnPause();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
 
         {
             scope.transform.Translate(Vector3.left);
-            aud1.UnPause();
-        }
-
-        if (!Input.anyKey)
-        {
-            aud1.Pause();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && reloadTime >= timeToReload)
@@ -81,6 +73,12 @@ public class PlayerInput : MonoBehaviour {
             fireAudio.GetComponent<AudioSource>().Play();
             rocket.Play();
             reloadTime = 0;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("pause");
+            uIManager.GetComponent<UIManager>().Pause();
         }
 
         if(reloadTime < timeToReload)
