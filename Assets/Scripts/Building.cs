@@ -24,4 +24,10 @@ public class Building : MonoBehaviour {
             messageSent = true;
         }
 	}
+
+    void HitByBomb()
+    {
+        stillAlive = false;
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
+    }
 }

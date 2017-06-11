@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour {
+    public GameObject soundManager;
 
     public bool gameEnding;
 
@@ -17,6 +18,7 @@ public class Bomb : MonoBehaviour {
 	void Start () {
         gameEnding = false;
         rotSet = false;
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
     }
 	
 	// Update is called once per frame
@@ -46,6 +48,7 @@ public class Bomb : MonoBehaviour {
         Debug.Log(other);
         if(other.GetComponent<Collider>().CompareTag("Building"))
         {
+            other.SendMessage("HitByBomb", SendMessageOptions.DontRequireReceiver);
             Explode();
         }
 
@@ -74,6 +77,7 @@ public class Bomb : MonoBehaviour {
     void Explode()
     {
         RenderSettings.fogColor = Color.white;
+        soundManager.SendMessage("PlayBombExplosion");
         Destroy(this.gameObject);
     }
 }

@@ -7,10 +7,11 @@ public class UIManager : MonoBehaviour
 {
     public bool gameEnding;
     public bool fadeOut;
-
+    public bool pause;
     public GameObject gameCore;
     public GameObject soundManager;
     public GameObject mainMenu;
+    public GameObject pauseMenu;
     public Transform onScreen;
     public Transform offScreen;
 
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour
     public GameObject soldierBG;
 
     public Image fade;
+    public bool alreadyRan = false;
 
 
 
@@ -33,11 +35,16 @@ public class UIManager : MonoBehaviour
         soldierBG.SetActive(false);
         soundManager.SendMessage("PlayMenuMusic");
         fadeOut = false;
-
+        pause = false;
     }
 
     public void Play()
     {
+        if(alreadyRan) // HACK for Bug in which this re-enters a number of times
+        {
+            return;
+        }
+        Debug.Log("Ran Play from UI");
         gameCore.SetActive(true);
         mainMenu.transform.position = offScreen.transform.position;
         shell.SetActive(true);
@@ -49,6 +56,7 @@ public class UIManager : MonoBehaviour
         soundManager.SendMessage("StartEngineLoop");
         fade.enabled = true;
         StartCoroutine(FadeTo(0.0f, 5f));
+        alreadyRan = true;
     }
 
     public void Options()
@@ -73,8 +81,30 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
-        mainMenu.transform.position = onScreen.transform.position;
+        if(!pause)
+        {
+            pauseMenu.transform.position = onScreen.transform.position;
+            pause = true;
+            soundManager.GetComponent<SoundManager>().pause = true;
+        }
+        else
+        {
+            pauseMenu.transform.position = offScreen.transform.position;
+            pause = false;
+            soundManager.GetComponent<SoundManager>().pause = false;
+        }
+
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        
     }
+
 
     IEnumerator FadeTo(float aValue, float aTime)
     {
@@ -91,9 +121,14 @@ public class UIManager : MonoBehaviour
     {
         if(gameEnding && !fadeOut)
         {
-            StartCoroutine(FadeTo(1f, 5f));
+            StartCoroutine(FadeTo(1f, 10f));
             fadeOut = true;
         }
+    }
+
+    void OnMouseOver()
+    {
+        soundManager.SendMessage("PlayMouseOver");
     }
 
 

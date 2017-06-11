@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SoundManager : MonoBehaviour {
-
+public class SoundManager : MonoBehaviour
+{
+    public bool pause;
     public bool gameEnding;
-
+    public AudioSource aud;
     public GameObject battleAudio;
     public GameObject russianMenu;
     public GameObject engineLoop;
+    public AudioClip airRaid;
     public AudioClip bombExplosion;
     public AudioClip shellExplosion;
     public AudioClip fireTank;
@@ -16,7 +19,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip gameBegin;
     public AudioClip gameEnd;
     public AudioClip mouseOver;
-    public AudioClip MouseClick;
+    public AudioClip mouseClick;
     public AudioClip germanMarch;
     public bool needToFade = false;
 
@@ -27,6 +30,8 @@ public class SoundManager : MonoBehaviour {
 
     void Start () {
         gameEnding = false;
+        aud = GetComponent<AudioSource>();
+        pause = false;
     }
 
     void Update()
@@ -41,85 +46,106 @@ public class SoundManager : MonoBehaviour {
                 engineLoop.GetComponent<AudioSource>().volume = fadeTime2;
             }
         }
+
+
+        if(pause)
+        {
+            engineLoop.GetComponent<AudioSource>().Pause();
+            battleAudio.GetComponent<AudioSource>().Pause();
+            battleAudio.GetComponent<AudioSource>().Pause();
+            aud.Pause();
+        }
+        else
+        {
+            engineLoop.GetComponent<AudioSource>().UnPause();
+            battleAudio.GetComponent<AudioSource>().UnPause();
+            battleAudio.GetComponent<AudioSource>().UnPause();
+            aud.UnPause();
+        }
     }
 
-    void PlayBombExplosion()
+    public void PlayBombExplosion()
+    {
+        aud.PlayOneShot(bombExplosion, 1f);
+    }
+
+    public void PlayShellExplosion()
     {
 
     }
 
-    void PlayShellExplosion()
+    public void PlayFireTank()
     {
 
     }
 
-    void PlayFireTank()
+    public void PlayReload()
+    {
+        aud.PlayOneShot(reload, 1f);
+    }
+
+    public void PlayGameBegin()
     {
 
     }
 
-    void PlayReload()
+    public void PlayGameEnd()
     {
 
     }
 
-    void PlayGameBegin()
+    public void PlayMouseOver()
+    {
+        aud.PlayOneShot(mouseOver, 5f);
+    }
+
+    public void PlayMouseClick()
+    {
+        aud.PlayOneShot(mouseClick, 5f);
+    }
+
+    public void PlayGermanMarch()
     {
 
     }
 
-    void PlayGameEnd()
-    {
-
-    }
-
-    void PlayMouseOver()
-    {
-
-    }
-
-    void PlayMouseClick()
-    {
-
-    }
-
-    void PlayGermanMarch()
-    {
-
-    }
-
-    void PlayMenuMusic()
+    public void PlayMenuMusic()
     {
         russianMenu.GetComponent<AudioSource>().Play();
     }
 
-    void StopMenuMusic()
+    public void StopMenuMusic()
     {
         russianMenu.GetComponent<AudioSource>().Stop();
     }
 
-    void PlayBattleBG()
+    public void PlayBattleBG()
     {
         battleAudio.GetComponent<AudioSource>().Play();
     }
 
-    void FadeBattleBG()
+    public void FadeBattleBG()
     {
         battleAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(battleAudio.GetComponent<AudioSource>().volume, 0,Time.deltaTime);
     }
 
-    void StopBattleBG()
+    public void StopBattleBG()
     {
         battleAudio.GetComponent<AudioSource>().Stop();
     }
 
-    void StartEngineLoop()
+    public void StartEngineLoop()
     {
         engineLoop.GetComponent<AudioSource>().Play();
     }
 
-    void StopEngineLoop()
+    public void StopEngineLoop()
     {
-        engineLoop.GetComponent<AudioSource>().Play();
+        engineLoop.GetComponent<AudioSource>().Stop();
+    }
+
+    public void StartAirRaid()
+    {
+        aud.PlayOneShot(airRaid, 1);
     }
 }

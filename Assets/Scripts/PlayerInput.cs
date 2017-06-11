@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour {
 
     public bool gameEnding;
     public GameObject uIManager;
+    public GameObject soundManager;
 
     public Image scope;
     public Transform target;
@@ -18,6 +19,7 @@ public class PlayerInput : MonoBehaviour {
 
     public float reloadTime;
     public float timeToReload;
+    public float moveSpeed;
 
     public Transform shellTarget;
     public GameObject shell;
@@ -59,13 +61,13 @@ public class PlayerInput : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            scope.transform.Translate(Vector3.right);
+            scope.transform.Translate(Vector3.right * moveSpeed);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
 
         {
-            scope.transform.Translate(Vector3.left);
+            scope.transform.Translate(Vector3.left * moveSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && reloadTime >= timeToReload)
@@ -73,6 +75,8 @@ public class PlayerInput : MonoBehaviour {
             fireAudio.GetComponent<AudioSource>().Play();
             rocket.Play();
             reloadTime = 0;
+            timeToReload += 0.01f;
+            soundManager.SendMessage("PlayReload");
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))

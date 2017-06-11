@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BombSpawner : MonoBehaviour {
+    public GameObject waveManager;
+    public GameObject soundManager;
 
     public bool gameEnding;
 
@@ -13,7 +15,7 @@ public class BombSpawner : MonoBehaviour {
     public int curNumBombs;
     public List<GameObject> playerBuildings = new List<GameObject>();
     public int timeBetweenBombs;
-
+    public float waveDelay;
     public GameObject otherTarget;
     public float randomOffset;
 
@@ -24,6 +26,8 @@ public class BombSpawner : MonoBehaviour {
 
     IEnumerator CreateBombs()
     {
+        soundManager.SendMessage("StartAirRaid");
+        yield return new WaitForSeconds(waveDelay);
         for (int i = 0; i < curNumBombs; i++)
         {
             var xPos = Random.Range(dropZone.position.x - dropRangeX, dropZone.position.x + dropRangeX);
@@ -52,7 +56,7 @@ public class BombSpawner : MonoBehaviour {
 
                 newBomb.GetComponent<Bomb>().CalcTarget(GO);
             }
-            
+            waveManager.GetComponent<WaveManager>().bombsDelivered += 1;
 
             yield return new WaitForSeconds(timeBetweenBombs);
 
