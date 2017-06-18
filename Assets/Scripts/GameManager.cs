@@ -10,14 +10,14 @@ public class GameManager : MonoBehaviour {
     private int buildingCount;
     public Color goBackTo;
 
-	void Start () {
+    void Start () {
         buildingCount = buildings.Length;
-        
     }
 
 	void Update () {
+        //Keep the fog moving towards a value
         RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, goBackTo, Time.deltaTime);
-
+       //Track life left
         var trackedHealth = GetComponent<LifeTimer>().currentHealth;
 
         // Lose conditions
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
         }
 
 	}
-
+    //Track building count
     void UpdateBuildingCount()
     {
         buildingCount--;
@@ -35,12 +35,12 @@ public class GameManager : MonoBehaviour {
 
     void Lose()
     {
+        //Tell all other scripts the game is over
         soundManager.GetComponent<SoundManager>().gameEnding = true;
         gameCore.GetComponent<BombSpawner>().gameEnding = true;
         gameCore.GetComponent<LifeTimer>().gameEnding = true;
         gameCore.GetComponent<PlayerInput>().gameEnding = true;
         uIManager.GetComponent<UIManager>().gameEnding = true;
-
     }
 
 }

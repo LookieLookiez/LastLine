@@ -7,27 +7,24 @@ public class SoundManager : MonoBehaviour
 {
     public bool pause;
     public bool gameEnding;
+    public float volume;
     public AudioSource aud;
     public GameObject battleAudio;
     public GameObject russianMenu;
     public GameObject engineLoop;
     public AudioClip airRaid;
     public AudioClip bombExplosion;
-    public AudioClip shellExplosion;
     public AudioClip fireTank;
     public AudioClip reload;
-    public AudioClip gameBegin;
-    public AudioClip gameEnd;
     public AudioClip mouseOver;
     public AudioClip mouseClick;
     public AudioClip germanMarch;
     public bool needToFade = false;
-
     public float fadeTime;
     public float fadeTime2;
+    public bool playing = false;
 
-
-
+    //Initialization
     void Start () {
         gameEnding = false;
         aud = GetComponent<AudioSource>();
@@ -36,6 +33,13 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
+        //Start credits music
+        if(gameEnding && !playing)
+        {
+            Invoke("PlayGermanMarch", 8);
+            playing = true;
+        }
+        //Fade the audio
         if(needToFade)
         {
             fadeTime -= Time.deltaTime;
@@ -47,7 +51,7 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-
+        //What happens to audio if paused
         if(pause)
         {
             engineLoop.GetComponent<AudioSource>().Pause();
@@ -69,11 +73,6 @@ public class SoundManager : MonoBehaviour
         aud.PlayOneShot(bombExplosion, 1f);
     }
 
-    public void PlayShellExplosion()
-    {
-
-    }
-
     public void PlayFireTank()
     {
 
@@ -82,16 +81,6 @@ public class SoundManager : MonoBehaviour
     public void PlayReload()
     {
         aud.PlayOneShot(reload, 1f);
-    }
-
-    public void PlayGameBegin()
-    {
-
-    }
-
-    public void PlayGameEnd()
-    {
-
     }
 
     public void PlayMouseOver()
@@ -106,7 +95,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayGermanMarch()
     {
-
+        aud.PlayOneShot(germanMarch, 1);
     }
 
     public void PlayMenuMusic()

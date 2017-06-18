@@ -7,268 +7,28 @@ Direct3D:
     VRAM:     2016 MB
     Driver:   21.21.13.6909
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.119 seconds
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\nicho\Documents\LastLine\Last Line_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.021 seconds
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\nicho\Desktop\LastLine\Last Line_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3520x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-The referenced script on this Behaviour (Game Object 'Shell') is missing!
- 
-(Filename:  Line: 1743)
-
-The referenced script on this Behaviour (Game Object 'PlayerBuilding4') is missing!
- 
-(Filename:  Line: 1743)
-
-UnloadTime: 0.977425 ms
+UnloadTime: 0.877370 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2df8 -> priority: 1 
-  Thread -> id: 2c14 -> priority: 1 
-  Thread -> id: 47ac -> priority: 1 
-  Thread -> id: 3aec -> priority: 1 
-Ran Play from UI
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerBuilding4 (UnityEngine.SphereCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerBuilding4 (UnityEngine.SphereCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Cube (6) (UnityEngine.BoxCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Cube (4) (UnityEngine.BoxCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerBuilding1 (UnityEngine.SphereCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Cube (5) (UnityEngine.BoxCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerBuilding1 (UnityEngine.SphereCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerBuilding2 (UnityEngine.SphereCollider)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+  Thread -> id: 1a60 -> priority: 1 
+  Thread -> id: 26f4 -> priority: 1 
+  Thread -> id: 21b4 -> priority: 1 
+  Thread -> id: 29a8 -> priority: 1 
 pause
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-pause
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-pause
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-pause
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnityEngine.Collision
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
